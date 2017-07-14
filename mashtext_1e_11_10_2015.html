@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>  
+  <head>  
+    <title>Macroeconomic Theory</title>
+    <link rel="stylesheet" type="text/css" href="MT_1e.css" />
+    <script src = "ch_title.js"></script>
+    <script src = "objects.js"></script>
+    <script src = "lox.js"></script>
+    <script src = "concept.js"></script>
+    <script src = "readings.js"></script>
+    <script src = "graphics.js"></script>
+    <script src = "practice.js"></script>
+    <script src = "prereq.js"></script>
+    <script src = "assessment.js"></script>
+    <script src = "MT_1e_housekeeping.js"></script>
+   
+  </head>
+
+<body onload="initx()" leftmargin="0" topmargin="0">
+  <form name="fin">
+
+  <table border="0" cellspacing="4" cellpadding="0" width="100%">
+ <tr>
+    <td align="center" bgcolor="#FFA500" width="190px;"><input type = "button" name = "reset2" value = "Reset" onclick="resetx();"/></td>
+    <td width="2 px" bgcolor="#C30000">&#160;</td>
+    <td bgcolor="#0000A0" background = "steel.GIF" align="center"><span style = "color: #000000; font-family: Arial;"><b>Learning Objects</b></span></td>
+  </tr>
+  
+  <tr >
+    <td align="center" height = "5px" bgcolor="#0000A3"></td>
+    <td width="2 px" height = "5px"bgcolor="#FFA500"></td>
+    <td bgcolor="#00A000" height = "5px"align="center"></td>
+  </tr>
+  
+  <tr>
+    <td bgcolor="#505050" valign="top">
+  <span onclick="changeme('chapters')" style = "cursor: pointer; "><x>Macroeconomic Theory</x></span>
+  <span id = "chapters">
+  <script>
+    //
+    var offset = 0;
+    var ch_offset = 0;
+    //
+    for (k=0;k<ch_count; k++) {
+       document.write("<span onclick=\"changeme(\'"+chx[k]+"\')\" style = \"cursor: pointer;\"><x>"+ch_title[k]+"</x></span>");
+       document.write("<span id = "+chx[k]+" style = \"display: block; background: white; \">");
+       for (i=0;i < lo_count[k];i++) {
+          j=i+offset;
+          document.write("<y><input type=checkbox name=\"rates\" size=4 onclick=\"initx()\"/>"+title_1[j]+"</y>");
+       }
+      document.write("</span>");
+      offset = offset + lo_count[k];
+    }
+    ch_offset=ch_offset+ch_count;
+   //
+  </script>
+</span>
+
+<span onclick="changeme('resources')" style = "cursor: pointer; "><x>External Resources </x></span>
+   <span id = "resources">
+   <a href="javascript:window1(xx='http://www.federalreserve.gov/general.htm') ">[E[ The Federal Reserve System</a>
+   <a href="javascript:window1(xx='http://www.bea.gov')" >[E] Bureau of Economic Analysis</a>
+   <a href="javascript:window1(xx='http://www.bls.gov')" >[E] Bureau of Labor Statistics</a>
+   <a href="javascript:window1(xx='http://www.census.gov')" >[E] Census (<i>Population estimates</i>)</a>
+</span>
+
+  </td>
+  <td style = "width: 3px; background: #AB00AB;">&nbsp;</td>
+  <td bgcolor="#fdfdfd" background = "paper.png" valign="top">
+  <script>
+    var lox = "";
+    for (i=0;i<lo_total;i++) {
+       //
+       document.write("<z1 id = "+sy[i]+">");
+       document.write("<y4><b>"+title_1[i]+"</b></y4>");
+       //  
+       // new code here
+       //
+       document.write("<y0  onclick=\" changeme(\'"+lox5[i]+"\')\" style = \"cursor: pointer;\"><b>Prerequisite</b></y0>");  
+       document.write("<y0c  onclick=\"changeme(\'"+lox1[i]+"\')\" style = \"cursor: pointer;\"><b>Concept</b></y0c>");
+       document.write("<y0a onclick=\"changeme(\'"+lox2[i]+"\')\" style = \"cursor: pointer;\"><b><i>Learn</i></b></y0a>");
+       document.write("<y0b onclick=\"changeme(\'"+lox3[i]+"\')\" style = \"cursor: pointer;\"><b>Practice</b></y0b>");
+       document.write("<y0d onclick=\"changeme(\'"+lox4[i]+"\')\" style = \"cursor: pointer;\"><b>Assess</b></y0d>");
+        // document.write("<y0c onclick=\"changeme(\'"+lox5[i]+"\')\" style = \"cursor: pointer;\"><b>Glossary</b></y0c>");
+       //
+       // sample data -- 'lo_002'
+       //
+      // 
+       //
+       document.write("<blockquote>");
+       document.write("<y3 id ="+lox5[i]+"><iframe src=\""+prereq_1[i]+"\" seamless=\"seamless\" height=\"300\" frameborder=\"0\"></iframe></y3>");
+       document.write("<y3 id ="+lox1[i]+"><iframe src=\""+concept_1[i]+"\" seamless=\"seamless\"  height=\"300\" frameborder=\"0\"></iframe></y3>");
+       document.write("<y3 id ="+lox2[i]+"><iframe src=\""+reading_1[i]+"\"  seamless=\"seamless\" height = \"500\" frameborder=\"0\"></iframe></y3>");
+       document.write("<y3 id ="+lox3[i]+"><center><iframe src=\""+practice_1[i]+"\" seamless=\"seamless\"  height=\"500\" frameborder=\"0\"></iframe></center></y3>");
+       document.write("<y3 id ="+lox4[i]+"><center><iframe class = \"assess\" src=\""+assessment_1[i]+"\" seamless=\"seamless\"  align = \"center\" height=\"380\" frameborder=\"0\"></iframe></center></y3>");
+       // document.write("<y3x id ="+lox5[i]+"><center><iframe src=\"glossary_micro.html\" seamless=\"seamless\" width = \"100%\" height=\"500\" frameborder=\"0\"></iframe></center></y3x>");
+       // 
+       document.write("</blockquote>");
+       document.write("</z1>");
+     }
+    </script>
+    </td>
+  </tr>
+ 
+  <tr>
+     <td bgcolor="#00A000" align = "center" height="32px" background = "steel.GIF">
+       &#160;</td>
+     <td width="3px" bgcolor="#FFA500">&nbsp;</td>
+     <td bgcolor="#A00000" align="center" background = "steel.GIF" >
+       <span style = "color: black; font-size: small; font-family: Arial;"><b>* v0.8, Copyright (c) 2015, dar *</b></span>
+     </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
